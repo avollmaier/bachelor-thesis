@@ -1,0 +1,123 @@
+server:
+  port: 9004
+  shutdown: graceful
+  tomcat:
+    connection-timeout: 2s
+    keep-alive-timeout: 15s
+    threads:
+      max: 50
+      min-spare: 5
+
+hypercrawler:
+  frontier-service:
+    client:
+      manager-service-uri: ${MANAGER_SERVICE_URI:http://localhost:9003}
+    metric:
+      basePriority: 10
+      thresholds:
+        - days: 365
+          multiplier: 0.1
+        - days: 180
+          multiplier: 0.2
+        - days: 90
+          multiplier: 0.4
+        - days: 30
+          multiplier: 0.6
+        - days: 7
+          multiplier: 0.8
+        - days: 1
+          multiplier: 1.0
+
+
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 5
+      connection-timeout: 10000
+      allow-pool-suspension:
+      idle-timeout: 100
+      max-lifetime: 120000
+  application:
+    name: frontier-service
+  data:
+    mongodb:
+      username: admin
+      database: admin
+      password: admin
+      port: 27017
+      host: hypercrawler-mongo
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
+  config:
+    import: 'optional:configserver:'
+  cloud:
+    config:
+      enabled: true
+      uri: ${CONFIG_SERVICE_URI:http://localhost:9001}
+      fail-fast: false
+      retry:
+        max-attempts: 20
+        max-interval: 10000
+        initial-interval: 3000
+        multiplier: 1.3
+    function:
+      definition: prioritize
+...
+spring:
+  cloud:
+    stream:
+      bindings:
+        prioritize-in-0:
+          destination: address-supplied
+          group: ${spring.application.name}
+        prioritize-out-0:
+          destination: address-prioritized
+...
+spring:
+  rabbitmq:
+    host: hypercrawler-rabbitmq
+    port: 5672
+    username: admin
+    password: admin
+    connection-timeout: 5s
+...
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              ReactiveMongoTemplate: TRACE
+      hibernate:
+        TRACE
+
+
+info:
+  system: hypercrawler
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: configprops, env, health, heapdump, info, loggers, mappings, prometheus
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}

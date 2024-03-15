@@ -1,0 +1,24 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Schlussfolgerung und Ausblick}
+\label{chap:conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterstart
+
+\section{Zusammenfassung der wichtigsten Ergebnisse}
+Diese Arbeit konzentriert sich auf die Verbesserung von Web-Crawlern, die in der heutigen Zeit, in einer digitalen Landschaft mit Milliarden von Webseiten, eine zentrale Rolle in der systematischen Informationsbeschaffung im Internet spielen. Das primäre Ziel dieser Forschung war es, Methoden zur Steigerung der Skalierbarkeit von Web-Crawlern zu untersuchen, die nicht nur eine effiziente Ressourcennutzung ermöglichen, sondern auch das Herunterladen und Verarbeiten eines hohen Volumens von Webseiten optimieren.
+
+Ein Schlüsselelement der Arbeit war die Entwicklung eines Web-Crawler-Prototyps. Dieser Ansatz verwendet im Gegensatz zu einer traditionellen \acl{JIT} die \acl{AOT}. Des Weiteren wurde eine Optimierung der monolythischen Architektur im Kontext Web-Crawling vorgenommen, indem eine auf Microservice basierte Architektur integriert wurde.
+
+Die Ergebnisse der Forschung zeigen, dass durch die Implementierung dieses Prototyps, die Skalierbarkeit und Effizienz der Web-Crawling Prozesse signifikant verbessert werden. Vor allem mithilfe von \acl{AOT} ist es möglich, Applikationsinstanzen in Bruchteilen einer Sekunde hochzufahren. In Kombination mit der Auftrennung der Architektur in einzelne Services ist dies ein enormer Vorteil. So können innerhalb kurzer Zeit Lastspitzen bewältigt werden.
+\newpage
+\acl{AOT} bietet durchaus Vorteile, bringt aber auch Nachteile mit sich. Erwähnt wurde in der Arbeit vor allem die erhöhte Rechenleistung beim Erstellen des Artefakts. So ist die jeweilige Nutzung von \acl{AOT} immer vom Anwendungskontext abhängig.
+
+\section{Beitrag zum Web-Crawling}
+Die Forschungsarbeit leistet einen signifikanten Beitrag zur Optimierung von Web-Crawling-Prozessen in Cloud-nativen Umgebungen. Durch die gezielte Anwendung von Microservices konnte eine deutliche Verbesserung der Skalierbarkeit und Effizienz von Web-Crawlern erreicht werden. Diese Verbesserungen sind insbesondere für die Handhabung großer Datenmengen relevant und ermöglichen eine dynamischere und ressourceneffizientere Datensammlung. Die Integration von Kubernetes ermöglicht eine verbesserte Orchestrierung der Container, was die Verwaltung von Ressourcen optimiert. Durch die Fokussierung auf Cloud-native Technologien wurden nicht nur bestehende Herausforderungen im Web-Crawling adressiert, sondern auch neue Möglichkeiten für die Forschung und Entwicklung in diesem Bereich eröffnet. Die Ergebnisse der Arbeit tragen dazu bei, die Lücke im Verständnis der Anwendung Cloud-nativer Microservice Lösungen im Web-Crawling zu schließen.
+
+\section{Ausblick auf zukünftige Forschung}
+Durch die Integration von Web-Crawling in eine Cloud-native Umgebung werden in diesem Anwendungskontext viele weitere Optimierungen und wissenschaftliche Arbeiten ermöglicht. Zukünftige Forschungsarbeiten könnten den Einfluss serverloser Architekturen auf die Leistungsfähigkeit und Effizienz von Web-Crawlern untersuchen. Ein Fokus könnte auf der Anpassungsfähigkeit dieser Architekturen an dynamische Lastbedingungen liegen, mit besonderem Augenmerk auf das Potenzial zur Kostenreduktion. Die Exploration der optimalen Nutzung von serverlosen Funktionen für Datenverarbeitung und -analyse stellt ein mögliches Forschungsfeld dar. Eine Entwicklung von Best Practices für die Implementierung serverloser Web-Crawler könnte eine Bereicherung zufolge haben.
+
+
+\chapterend
+

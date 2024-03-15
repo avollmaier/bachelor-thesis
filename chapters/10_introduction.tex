@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Einleitung}
+\label{chap:intro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterstart
+
+% Overall problem
+%  and why is it relevant 
+%  relevant to which target group
+% key questions to answer
+% your approach, the method (survey, prototype, user tests, ...)
+% one/two hypotheses (idea of solution)
+
+Suchmaschinen sind integraler Bestandteil des \ac{WWW}. Diese agieren in gewisser Weise wie Navigationsinstrumente im digitalen Raum und ermöglichen es Nutzern, gezielt nach Informationen, Ressourcen und Inhalten im weitläufigen Netzwerk des \ac{WWW} zu suchen. Suchmaschinen lassen sich mit einem Register in einer Bibliothek vergleichen – sie wissen, wo sich sämtliche Inhalte zu einem jeweils gesuchten Thema befinden. Um diese Informationen bereitzustellen, ist es jedoch erforderlich, den Umfang und Inhalt der Gesamtheit aller Ressourcen, in diesem Fall Bücher, zu kennen und diese systematisch zu klassifizieren. Diese Aufgabe lässt sich, wie bereits erläutert, auf das \ac{WWW} übertragen.\newline
+
+Ein Ansatz zur Bewältigung dieser Herausforderung besteht darin, jede einzelne Webseite eingehend zu analysieren und die gewonnenen Informationen in einer strukturierten Datenbank zu speichern. Auf diese Weise können die gesammelten Daten zu einem späteren Zeitpunkt abgefragt werden. Für diesen Zweck kommen spezielle Programme, sogenannte \textbf{\textit{''Web-Crawler''}}, zum Einsatz. Der Begriff \textbf{\textit{''Crawling''}} bezieht sich auf den Prozess, bei dem ein Programm, das als \textbf{\textit{''Web-Crawler''}} bezeichnet wird, das \ac{WWW} durchsucht, indem es verlinkte Webseiten folgt, und anschließend die heruntergeladenen Seiten in einer Datenbank speichert~\parencite[vgl.][S. 1]{sharma2015anatomy}.
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problemstellung}\label{sec:problem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Wie in der Einleitung bereits erwähnt, ist im digitalen Umfeld das Web-Crawling ein %entscheidendes Instrument zur Sammlung von Informationen von Webseiten.
+
+Wie bereits in der Einleitung hervorgehoben, stellt das Web-Crawling im digitalen Umfeld ein entscheidendes Werkzeug dar, um Informationen von Webseiten zu sammeln.
+Eine zentrale Herausforderung besteht darin, Web-Crawler so zu optimieren, dass sie hohe Arbeitslasten effizient bewältigen können, insbesondere in der schnellen Verarbeitung umfangreicher Webseitenmengen.
+
+
+%Eine zentrale Herausforderung liegt in der Optimierung von Web-Crawlern zur effizienten %Bewältigung hoher Arbeitslasten, insbesondere in der schnellen Verarbeitung umfangreicher %Webseitenmengen.
+
+Diese Herausforderung erlangt an Bedeutung, da es eine enorme Anzahl von Webseiten im \ac{WWW} gibt. Seit der Gründung des World Wide Web (\ac{WWW}) durch den britischen Informatiker Tim Berners-Lee im Jahre 1989 ist das Volumen aller Webseiten bis zum 5. Februar 2024 auf mindestens 3,29 Milliarden angestiegen, wie von \citetitle{DeKunder2016}~\parencite[vgl.][]{DeKunder2016} dokumentiert wurde. Die Optimierung der Architektur von Web-Crawlern ist daher von entscheidender Bedeutung. Aus dieser Prämisse ergibt sich eine weiterführende Forschungsfrage in Kapitel \ref{sec:rq}.
+
+Zur Bewältigung dieser Herausforderung eignet sich die Untersuchung von Ansätzen auf Basis von Cloud-native Technologien. Diese Technologien haben das Potenzial, die Durchführungseffizienz im Vergleich zu traditionellen Web-Crawling-Architekturen zu optimieren. Im Kontext dieser Arbeit wird die Effizienzverbesserung in zwei distinkte Bereiche gegliedert:
+
+\begin{itemize}
+    \item \textbf{Ressourceneffizienz} adressiert die effiziente Verwendung von Hardware Komponenten, insbesondere CPU und Arbeitsspeicher.
+    \item \textbf{Skalierbarkeit} hingegen bezieht sich auf die Fähigkeit einer Anwendung oder eines Systems, effektiv mit einer zunehmenden Last umzugehen.
+\end{itemize}
+Die Unterscheidung zwischen diesen beiden Aspekten ermöglicht eine fokussierte Analyse und Optimierung in Bezug auf spezifische Leistungsziele.
+
+Somit widmet sich diese Arbeit einer eingehenden wissenschaftlichen Analyse mit dem Ziel, effektive Lösungsansätze für die genannten Herausforderungen zu finden. Hierzu werden zwei fundamentale Hypothesen formuliert (Kapitel \ref{sec:hypothesis}), welche über das gesamte Werk einer detaillierten Untersuchung unterzogen werden. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Forschungsfrage}\label{sec:rq}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In diesem Abschnitt rückt die zentrale Forschungsfrage in den Fokus, die den Ausgangspunkt und die Richtlinie für die gesamte wissenschaftliche Untersuchung bildet:\newline
+
+\textbf{Forschungsfrage:}\newline
+\textit{Welche Strategien und Technologien ermöglichen eine Optimierung der Skalierbarkeit und Ressourceneffizienz von Web-Crawler-Systemen, um die Verarbeitung umfangreicher Datensätze in einer verteilten Umgebung zu verbessern?}\newline
+
+Die spezifische Forschungsfrage, welche die Skalierbarkeit und Ressourceneffizienz als zentrale Aspekte der Problemstellung berücksichtigt und das Ziel einer effizienten Verarbeitung großer Mengen von Webseiten verfolgt, bildet den Rahmen für die nachfolgenden Kapitel. Diese Abschnitte widmen sich der detaillierten Untersuchung, Analyse und Diskussion der Herausforderung unter verschiedenen Gesichtspunkten. Die Bearbeitung dieser Fragestellung zielt darauf ab, innovative Ansätze und Technologien zu erkunden und zu bewerten, welche die Effizienz von Web-Crawlern verbessern können. Die Konzentration auf die Identifizierung geeigneter Lösungen bietet sowohl theoretische Einblicke als auch praktisch anwendbare Strategien.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hypothesen}\label{sec:hypothesis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In diesem Kapitel werden die Hypothesen zur Skalierungsoptimierung und Optimierung der Ressourceneffizienz von Web-Crawlern formuliert. 
+\subsection{Skalierungsoptimierung} \label{subsec:hypothesis:scalability}
+
+Die Implementierung einer serviceorientierten Software-Architektur wird die Skalierbarkeit von Web-Crawlern steigern, was zu einer Erhöhung des Crawling-Durchsatzes – definiert als die Anzahl der in einem bestimmten Zeitraum verarbeiteten Webseiten – um 10\% führt, ohne die bestehende Ressourcenausstattung zu erhöhen.
+
+\subsection{Optimierung der Ressourceneffizienz} \label{subsec:hypothesis:ressource}
+Der Einsatz von \acl{AOT} zur Generierung nativer Buildartefakte wird im Vergleich zur \acl{JIT} den Verbrauch von Arbeitsspeicher und CPU durch Web-Crawler Services um 20\% verringern und die Startzeit von Service-Instanzen um 60\% reduzieren.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Forschungsdesign und Methodik}\label{sec:method} % Materials and Methods
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Die methodische Ausrichtung dieser Studie basiert auf der Entwicklung eines Prototyps, der spezifisch nach den analysierten Ansätzen optimiert wird. Dieser Prototyp fungiert als das Testobjekt, mittels dessen die in der Forschungsarbeit aufgestellten Hypothesen überprüft werden.
+
+Die Methodik gliedert sich in mehrere Phasen. Diese Phasen werden in den folgenden Kapiteln vorgestellt.
+
+\subsection{Konzeption des Prototyps} \label{subsec:prototype}
+In der vorliegenden Arbeit erfolgt die Konzeption eines Prototypen, der auf einer serviceorientierten Lösung basiert. Als theoretische Grundlage und zum Zweck des Vergleichs werden traditionelle Konzepte (Kapitel \ref{sec:traditionalconcepts}) von Web-Crawlern herangezogen, die eine wissenschaftliche Basis darstellen. Während der Prototyp grundlegende Prinzipien dieser etablierten Ansätze integriert, implementiert er einen spezifisch angepassten und optimierten Ansatz zur Adressierung der definierten Problemstellung. Das Ziel dieses Abschnitts ist die Entwicklung einer Plattform zur Evaluation, um zu analysieren, ob sich der Einsatz von Services im Bereich Web-Crawling Effizienz hinsichtlich Ressourcennutzung und Skalierbarkeit steigert. Kapitel \ref{chap:concept} und \ref{chap:implementation} widmen sich den erwähnten Bereichen.
+
+\subsection{Konzeption der Datensammlung} \label{subsec:datacollection}
+Der Prototyp, beschrieben in Kapitel \ref{subsec:prototype}, wird Lasttests unterzogen. Die Datengrundlage für diese Tests bilden Webseiten unterschiedlicher Größenordnungen, quantifiziert durch die Anzahl ihrer Unterseiten. Es werden drei Crawling-Durchläufe pro Lösungsvariante für die Hypothese \textit{\nameref{subsec:hypothesis:scalability}} durchgeführt. Für die Überprüfung dieser Hypothese werden unter anderem auch große Testdaten ausgewählt, um eine fundierte Analyse zu ermöglichen. Die Details dieser Testdaten werden in Kapitel \ref{sec:testdaten} erläutert. Für die Hypothese \textit{\nameref{subsec:hypothesis:ressource}} wird ein eigenständiger Datensatz verwendet, der für beide Lösungsvarianten, also \ac{AOT}-Artefakte sowie \ac{JIT}-Artefakte verwendet wird.
+
+Die Methodik für die Lasttests unterscheidet sich je nach zu überprüfender Hypothese. Zwischen diesen wird wiefolgt differenziert:
+\newpage
+\textbf{Hypothese: \nameref{subsec:hypothesis:scalability}}\\
+Der Fokus liegt auf einem Vergleich zwischen dem Prototyp und einer bestehenden Softwarelösung. Diese Lösung basiert auf den in Kapitel \ref{sec:traditionalconcepts} analysierten traditionellen Konzepten, was einen qualitativen Vergleich ermöglicht. Eine zusätzlich erstellte Applikation wird für diesen Vergleich herangezogen, da es nur dadurch möglich ist, einen vergleichbaren Funktionsumfang zur bietet. Somit werden mit beiden Implementierungen idente Tests durchgeführt.
+
+\textbf{Hypothese: \nameref{subsec:hypothesis:ressource}}\\
+Die Untersuchung dieser Hypothese zielt darauf ab, die Auswirkungen der Anwendung von \ac{AOT}- und \ac{JIT}-Kompilierung zu analysieren. Zu diesem Zweck werden die Services des Prototyps unter identischen Testbedingungen sowohl mit \ac{AOT}- als auch mit \ac{JIT}-kompilierten Artefakten durchgeführt. 
+
+\subsection{Konzeption der Datenanalyse} \label{subsec:dataanalysis}
+Die Datenanalyse wird simultan zu den Lasttests durchgeführt, wobei speziell Abschnitt \ref{sec:metrics} die Analyse relevanter Metriken behandelt.
+
+\textbf{Hypothese: \nameref{subsec:hypothesis:scalability}}\\
+Die Evaluation der Hypothese, wie in Abschnitt \textit{\nameref{subsec:hypothesis:scalability}} dargelegt, basiert auf dem Crawling-Durchsatz, welcher in der Hypothese definiert und in Kapitel \ref{sec:metrics} beschrieben wird. Zusätzlich wird die Gesamtdauer der Crawling-Prozesse untersucht und verglichen.
+
+\textbf{Hypothese: \nameref{subsec:hypothesis:ressource}}\\
+Die Tests fokussieren sich auf die Analyse des CPU- und Arbeitsspeicherverbrauchs. Des Weiteren wird die Bereitschaft der Anwendung (Application Readiness) als Indikator für die Startzeit bewertet und verglichen. Diese Parameter sind essentiell, um die Auswirkungen der Kompilierungsstrategien auf die Ressourcennutzung und die Leistungsfähigkeit des Systems zu bestimmen und somit die Hypothese zu verifizieren oder falsifizieren.
+
+
+Die getrennte Analyse der Hypothesen betont Reproduzierbarkeit für wissenschaftlich fundierte Aussagen und bildet die methodische Basis. Die Definition der Testumgebung erfolgt in Kapitel \ref{subsec:testenv}.
+
+Der Quellcode des Prototypen, welcher die Anwendung der diskutierten Konzepte veranschaulicht, ist auf GitHub~\footnote{https://github.com/avollmaier/hypercrawler} zu finden. Dieses Repository bildet die Grundlage für den in dieser Arbeit dargestellten Entwicklungs- und Optimierungsprozess.
+\chapterend
+
